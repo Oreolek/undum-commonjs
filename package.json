@@ -18,5 +18,6 @@
     { "name": "Selene" }
     ],
   "files": ["lib"],
-  "main": "lib/undum.js"
+  "main": "lib/undum.js",
+  "private": true
 }
