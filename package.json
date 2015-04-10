@@ -1,0 +1,22 @@
+{
+  "name": "undularity-commonjs",
+  "version": "3.0.0",
+  "description": "A game framework for building hypertext interactive ficiton.",
+  "license": "MIT",
+  "author": {
+    "name": "Ian Millington",
+    "email": "idmillington@googlemail.com"
+    },
+  "contributors": [
+    { "name": "Alexander Yakovlev" },
+    { "name": "Andrew Plotkin" },
+    { "name": "Bruno Dias" },
+    { "name": "David Eik" },
+    { "name": "Ivan Narozhny" },
+    { "name": "Juhana Leinonen" },
+    { "name": "Michael Neal Tenuis" },
+    { "name": "Selene" }
+    ],
+  "files": ["lib"],
+  "main": "lib/undum.js"
+}
