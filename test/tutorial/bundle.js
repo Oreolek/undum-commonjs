@@ -1787,10 +1787,6 @@ var scrollBottomTo = function (value) {
 
 /* At last, we scroll the view so that .new objects are in view. */
 var endOutputTransaction = function () {
-    /* We take the options list into account, because we don't want the new
-     * content to scroll offscreen when the bar disappears, and it's
-     * preferrable to keep it in view if at all possible, because of how
-     * likely it is that the player's next input is on it. */
     var
         $new = $('.new'),
         viewHeight = $(window).height(),
@@ -1803,12 +1799,15 @@ var endOutputTransaction = function () {
     newBottom = $new.last().offset().top + $new.last().height(),
     newHeight = newBottom - newTop;
 
+    /* We take the options list into account, because we don't want the new
+     * content to scroll offscreen when the list disappears. So we calculate
+     * scroll points as though the option list was already gone. */
     if ($('.options').not('.new').length)
         optionHeight = $('.options').not('new').height();
 
     if (newHeight > (viewHeight - 50)) {
         /* The new content is too long for our viewport, so we scroll the
-         * top of the new content to roughly the centre of the viewport's
+         * top of the new content to roughly 75% of the way up the viewport's
          * height. */
         scrollTopTo(newTop-(viewHeight*0.25) - optionHeight);
     }
@@ -2250,7 +2249,16 @@ var initMenu = function() {
                 }
             });
             // Fade in our target
-            setTimeout(function() { target.fadeIn(500); }, 250);
+            setTimeout(function() { 
+                target.fadeIn(500);
+                if (target.is('#content_wrapper') && $('.new').length) {
+                    console.log('got here');
+                    console.log($('.new').first());
+                    console.log($('.new').first().offset().top);
+                    /* Put the newest content into view if possible */
+                    window.scrollTo(0, $('.new').first().offset().top - 500);
+                }
+            }, 250);
         }
         close();
         return false;
