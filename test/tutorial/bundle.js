@@ -1777,16 +1777,24 @@ var startOutputTransaction = function() {
     $('.new').removeClass('new');
 };
 
+/* Scrolls the top of the screen to the specified point */
 var scrollTopTo = function (value) {
   $('html,body').animate({scrollTop: value}, 500);
 };
 
+/* Scrolls the bottom of the screen to the specified point */
 var scrollBottomTo = function (value) {
   scrollTopTo(value - $(window).height());
 };
 
+/* Scrolls all the way to the bottom of the screen */
+var scrollToBottom = function () {
+    scrollTopTo($('html').height() - $(window).height());
+};
+
 /* At last, we scroll the view so that .new objects are in view. */
 var endOutputTransaction = function () {
+    if (!interactive) return; // We're loading a save; do nothing at all.
     var
         $new = $('.new'),
         viewHeight = $(window).height(),
@@ -1805,16 +1813,24 @@ var endOutputTransaction = function () {
     if ($('.options').not('.new').length)
         optionHeight = $('.options').not('new').height();
 
-    if (newHeight > (viewHeight - 50)) {
+    if (newHeight > (viewHeight - optionHeight - 50)) {
         /* The new content is too long for our viewport, so we scroll the
          * top of the new content to roughly 75% of the way up the viewport's
          * height. */
         scrollTopTo(newTop-(viewHeight*0.25) - optionHeight);
     }
     else {
-        /* We scroll the new content into view so that the bottom is about
-         * 100 pixels down from the bottom of the new content. */
-        scrollBottomTo(newBottom+100 - optionHeight);
+
+        if (newTop > $('body').height() - viewHeight) {
+            /* If we scroll right to the bottom, the new content will be in
+             * view. So we do that.*/
+            scrollToBottom();
+        }
+        else {
+            /* Our new content is too far up the page. So we scroll to place
+             * it somewhere near the bottom. */
+            scrollBottomTo(newBottom+100 - optionHeight);
+        }
     }
 };
 
@@ -2252,9 +2268,6 @@ var initMenu = function() {
             setTimeout(function() { 
                 target.fadeIn(500);
                 if (target.is('#content_wrapper') && $('.new').length) {
-                    console.log('got here');
-                    console.log($('.new').first());
-                    console.log($('.new').first().offset().top);
                     /* Put the newest content into view if possible */
                     window.scrollTo(0, $('.new').first().offset().top - 500);
                 }
