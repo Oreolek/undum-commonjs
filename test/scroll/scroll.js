@@ -62,7 +62,32 @@ undum.game.situations.replacement = new undum.SimpleSituation(
   'Eam ubique antiopam ut, no odio partiendo torquatos quo, qui ne quod duis ' +
   'nullam. Quando nostro no has, populo prompta blandit at eos. Eos erant animal ' +
   'referrentur eu, iusto vivendo comprehensam no est, ex adhuc numquam cum.</p>' +
-  '<p>Click <a href="./first">this link</a> to replace a paragraph.</p>',
+  '<p>Click <a href="./first">this link</a> to replace a paragraph.</p>' +
+
+    '<p id="second">Mei ei elit tritani oblique, per nominati forensibus et. Quo ne quem odio ' +
+  'melius. Ex duo amet diam vituperata, eos velit molestie conceptam ad, no ' +
+  'nominati prodesset quo. Senserit mediocrem cu qui. Ad laudem everti diceret ' +
+  'quo, per te inani feugiat sanctus.</p>' +
+
+    '<p id="second">Mei ei elit tritani oblique, per nominati forensibus et. Quo ne quem odio ' +
+  'melius. Ex duo amet diam vituperata, eos velit molestie conceptam ad, no ' +
+  'nominati prodesset quo. Senserit mediocrem cu qui. Ad laudem everti diceret ' +
+  'quo, per te inani feugiat sanctus.</p>' +
+
+    '<p id="second">Mei ei elit tritani oblique, per nominati forensibus et. Quo ne quem odio ' +
+  'melius. Ex duo amet diam vituperata, eos velit molestie conceptam ad, no ' +
+  'nominati prodesset quo. Senserit mediocrem cu qui. Ad laudem everti diceret ' +
+  'quo, per te inani feugiat sanctus.</p>' +
+
+    '<p id="second">Mei ei elit tritani oblique, per nominati forensibus et. Quo ne quem odio ' +
+  'melius. Ex duo amet diam vituperata, eos velit molestie conceptam ad, no ' +
+  'nominati prodesset quo. Senserit mediocrem cu qui. Ad laudem everti diceret ' +
+  'quo, per te inani feugiat sanctus.</p>' +
+
+    '<p id="second">Mei ei elit tritani oblique, per nominati forensibus et. Quo ne quem odio ' +
+  'melius. Ex duo amet diam vituperata, eos velit molestie conceptam ad, no ' +
+  'nominati prodesset quo. Senserit mediocrem cu qui. Ad laudem everti diceret ' +
+  'quo, per te inani feugiat sanctus.</p>',
   {
     optionText: function () {return 'Mutable content'},
     choices: ['long', 'short'],
