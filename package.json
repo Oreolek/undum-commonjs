@@ -1,7 +1,7 @@
 {
   "name": "undum-commonjs",
   "version": "3.0.2",
-  "description": "A game framework for building hypertext interactive ficiton.",
+  "description": "A game framework for building hypertext interactive fiction.",
   "license": "MIT",
   "author": {
     "name": "Ian Millington",
