@@ -16,6 +16,8 @@ Second, it's filled with custom modifications for my liking, such as:
 
 - Animations are faster
 - Got rid of `animateQuality` because I would never, ever use it
+- Got rid of `loadHTMLSituations`, same reason
+- Undum now exports `processClick` function - you can do custom interface with that!
 - Situation cannot be an implicit choice of itself.
 - Implicit choice optionText can be a piece of HTML, it's not escaped
   as text now. You can use text inputs!
