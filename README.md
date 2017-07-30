@@ -1,5 +1,7 @@
 # Undum (npm package)
 
+**2017 update:** If you are here and you need this… I recommend you to look at [Salet](https://salet.su) instead. It's an Undum-derived engine rewritten for extendability, packaged for NPM. It has all the features from here and then much more.
+
 [Undum](http://undum.com) is a general game framework for building
 a sophisticated form of hypertext interactive fiction.
 
