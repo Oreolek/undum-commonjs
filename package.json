@@ -39,6 +39,6 @@
   "main": "lib/undum.js",
   "private": true,
   "dependencies": {
-    "jquery": "^2.1.3"
+    "jquery": "^1.12.4"
   }
 }
